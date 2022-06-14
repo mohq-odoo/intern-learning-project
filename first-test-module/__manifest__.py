@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "first-test-module",
+    'name': "Acedemy Course",
 
     'summary': """
-        Create test module for learning""",
+        Test Module -> Academy Course""",
 
     'description': """
-        Create test module for learning
+        Test Module -> Academy Course
     """,
 
     'author': "Hazique Quazi",
