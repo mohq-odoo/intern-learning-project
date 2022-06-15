@@ -12,7 +12,7 @@ class Course(models.Model):
     # value2 = fields.Float(compute="_value_pc", store=True)
     description = fields.Text(string='Description')
     
-    levels = fields.Selection(string='Level',
+    level = fields.Selection(string='Level',
                              selection=[('beginner', 'Beginner'),
                                        ('medium', 'Medium'),
                                        ('advanced', 'Advanced')],
