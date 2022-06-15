@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="1">
+  <data>
 
-        <record model="first-test-module.course" id="erp_101">
-            <field name="name">ERP 101</field>
-            <field name="description">Learn ERP System</field>
-            <field name="level">beginner</field>
-        </record>
-        
-        <record model="first-test-module.course" id="accounting_200">
-            <field name="name">Accounting 200</field>
-            <field name="description">
+    <record model="academy.course" id="erp_101">
+      <field name="name">ERP 101</field>
+      <field name="description">Learn ERP System</field>
+      <field name="level">beginner</field>
+    </record>
+
+    <record model="academy.course" id="accounting_200">
+      <field name="name">Accounting 200</field>
+      <field name="description">
             Learn Accounting: 200
             Intermediate accounting course
             </field>
-            <field name="level">intermediate</field>
-        </record>
-        
-        <record model="first-test-module.course" id="website_101">
-            <field name="name">Website Building</field>
-            <field name="description"></field>
-            <field name="level">advanced</field>
-        </record>
-<!--
+      <field name="level">medium</field>
+    </record>
+
+    <record model="academy.course" id="website_101">
+      <field name="name">Website Building</field>
+      <field name="description"></field>
+      <field name="level">advanced</field>
+    </record>
+    <!--
           <record id="object1" model="first-test-module.first-test-module">
             <field name="name">Object 1</field>
             <field name="value">10</field>
@@ -43,5 +43,5 @@
             <field name="value">40</field>
           </record>
 -->
-    </data>
+  </data>
 </odoo>
