@@ -11,9 +11,12 @@
                         <group>
                             <group>
                                 <field name="course_id"/>
+                                <field name="instructor_id"/>
                             </group>
                             <group>
-                                <field name="instructor_id"/>
+                                <field name="start_date"/>
+                                <field name="end_date"/>
+                                <field name="duration"/>
                             </group>
                         </group>
                         <notebook>
@@ -37,8 +40,23 @@
             </field>
         </record>
 
-        <!-- <menuitem name="Odoo Academy" id="menu_academy" sequence="1" />
+        <record model="ir.ui.view" id="session_view_calendar">
+            <field name="name">academy.session.calendar</field>
+            <field name="model">academy.session</field>
+            <field name="arch" type="xml">
+                <calendar string="Session Calendar" 
+                        date_start="start_date"
+                        date_stop="end_date"
+                        color="instructor_id"
+                        mode="month">
+                    <field name="start_date"/>
+                    <field name="instructor_id"/>
+                </calendar>
+            </field>
+        </record>
+
+        <menuitem name="Odoo Academy" id="menu_academy" sequence="1" />
         <menuitem name="Odoo Academy" id="menu_academy_sub" parent="menu_academy" sequence="2" />
-        <menuitem name="Courses" id="menu_academy_course" parent="menu_academy_sub" sequence="3" action="course_list_action" /> -->
+        <menuitem name="Courses" id="menu_academy_course" parent="menu_academy_sub" sequence="3" action="course_list_action" />
     </data>
 </odoo>
