@@ -31,6 +31,9 @@
         'views/course_views.xml',
         'views/session_views.xml',
         'views/sale_views_inherit.xml',
+        'views/product_views_inherit.xml',
+        'wizard/sale_wizard_view.xml',
+        'reports/session_report_templates.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from email.policy import default
+from signal import default_int_handler
+from pkg_resources import require
 
 from urllib3 import encode_multipart_formdata
 from odoo import models, fields, api
@@ -35,6 +37,18 @@ class Session(models.Model):
         inverse='_inverse_end_date',
         store=True
     )
+
+    state = fields.Selection(string='States',
+            selection=[('draft', 'Draft'),
+                ('open', 'In Progress'),
+                ('done', 'Done'),
+                ('cancelled', 'Cancelled')],
+            default='draft',
+            required=True)
+
+    total_price = fields.Float(string='Total Price',
+            related='course_id.total_price')
+
 
     @api.depends('start_date', 'duration')
     def _compute_end_date(self):
