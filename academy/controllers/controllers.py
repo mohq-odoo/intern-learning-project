@@ -1,21 +1,25 @@
-# -*- coding: utf-8 -*-
-# from odoo import http
+#-*- coding: utf-8 -*-
 
 
-# class First-test-module(http.Controller):
-#     @http.route('/first-test-module/first-test-module', auth='public')
-#     def index(self, **kw):
-#         return "Hello, world"
+from odoo import http
 
-#     @http.route('/first-test-module/first-test-module/objects', auth='public')
-#     def list(self, **kw):
-#         return http.request.render('first-test-module.listing', {
-#             'root': '/first-test-module/first-test-module',
-#             'objects': http.request.env['first-test-module.first-test-module'].search([]),
-#         })
+class Academy(http.Controller):
 
-#     @http.route('/first-test-module/first-test-module/objects/<model("first-test-module.first-test-module"):obj>', auth='public')
-#     def object(self, obj, **kw):
-#         return http.request.render('first-test-module.object', {
-#             'object': obj
-#         })
+    @http.route('/academy/', auth="public", website=True)
+    def index(self, **kw):
+        return "Hello World"
+    
+
+    @http.route('/academy/courses/', auth='public', website=True)
+    def courses(self, **kw):
+        courses = http.request.env['academy.course'].search([])
+
+        return http.request.render('academy.course_website', {
+            'courses': courses
+        })
+
+    @http.route('/academy/<model("academy.session"):session>/', auth='public', website=True)
+    def session(self, session):
+        return http.request.render('academy.session_website', {
+            'session': session,
+        })
