@@ -19,7 +19,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['sale'],
 
     # always loaded
     'data': [
@@ -30,6 +30,7 @@
         'views/academy_menuitems.xml',
         'views/course_views.xml',
         'views/session_views.xml',
+        'views/sale_views_inherit.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
